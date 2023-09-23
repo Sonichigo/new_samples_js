@@ -1,15 +1,15 @@
 version: api.keploy.io/v1beta1
-name: report-2
-status: FAILED
-success: 0
-failure: 2
+name: report-4
+status: PASSED
+success: 2
+failure: 0
 total: 2
 tests:
     - kind: Http
-      name: report-2
-      status: FAILED
-      started: 1695441555
-      completed: 1695441555
+      name: report-4
+      status: PASSED
+      started: 1695441727
+      completed: 1695441727
       test_case_path: /files/keploy
       mock_path: ""
       test_case_id: test-1
@@ -37,7 +37,6 @@ tests:
       resp:
         status_code: 201
         header:
-            Connection: keep-alive
             Content-Length: "32"
             Content-Type: text/html; charset=utf-8
             Date: Sat, 23 Sep 2023 03:55:19 GMT
@@ -56,23 +55,6 @@ tests:
             expected: 201
             actual: 201
         headers_result:
-            - normal: true
-              expected:
-                key: X-Powered-By
-                value:
-                    - Express
-              actual:
-                key: X-Powered-By
-                value:
-                    - Express
-            - normal: false
-              expected:
-                key: Connection
-                value:
-                    - keep-alive
-              actual:
-                key: Connection
-                value: []
             - normal: true
               expected:
                 key: Content-Length
@@ -99,7 +81,7 @@ tests:
               actual:
                 key: Date
                 value:
-                    - Sat, 23 Sep 2023 03:59:15 GMT
+                    - Sat, 23 Sep 2023 04:02:07 GMT
             - normal: true
               expected:
                 key: Etag
@@ -109,6 +91,15 @@ tests:
                 key: Etag
                 value:
                     - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            - normal: true
+              expected:
+                key: X-Powered-By
+                value:
+                    - Express
+              actual:
+                key: X-Powered-By
+                value:
+                    - Express
         body_result:
             - normal: true
               type: PLAIN
@@ -116,10 +107,10 @@ tests:
               actual: Student registration successful!
         dep_result: []
     - kind: Http
-      name: report-2
-      status: FAILED
-      started: 1695441555
-      completed: 1695441555
+      name: report-4
+      status: PASSED
+      started: 1695441727
+      completed: 1695441727
       test_case_path: /files/keploy
       mock_path: ""
       test_case_id: test-2
@@ -147,7 +138,6 @@ tests:
       resp:
         status_code: 201
         header:
-            Connection: keep-alive
             Content-Length: "32"
             Content-Type: text/html; charset=utf-8
             Date: Sat, 23 Sep 2023 03:55:31 GMT
@@ -166,6 +156,15 @@ tests:
             expected: 201
             actual: 201
         headers_result:
+            - normal: true
+              expected:
+                key: X-Powered-By
+                value:
+                    - Express
+              actual:
+                key: X-Powered-By
+                value:
+                    - Express
             - normal: true
               expected:
                 key: Content-Length
@@ -192,7 +191,7 @@ tests:
               actual:
                 key: Date
                 value:
-                    - Sat, 23 Sep 2023 03:59:15 GMT
+                    - Sat, 23 Sep 2023 04:02:07 GMT
             - normal: true
               expected:
                 key: Etag
@@ -202,23 +201,6 @@ tests:
                 key: Etag
                 value:
                     - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
-            - normal: true
-              expected:
-                key: X-Powered-By
-                value:
-                    - Express
-              actual:
-                key: X-Powered-By
-                value:
-                    - Express
-            - normal: false
-              expected:
-                key: Connection
-                value:
-                    - keep-alive
-              actual:
-                key: Connection
-                value: []
         body_result:
             - normal: true
               type: PLAIN

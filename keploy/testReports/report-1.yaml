@@ -8,8 +8,8 @@ tests:
     - kind: Http
       name: report-1
       status: FAILED
-      started: 1695438481
-      completed: 1695438481
+      started: 1695441364
+      completed: 1695441364
       test_case_path: /files/keploy
       mock_path: ""
       test_case_id: test-1
@@ -22,137 +22,16 @@ tests:
             Accept: '*/*'
             Accept-Encoding: gzip, deflate, br
             Cache-Control: no-cache
-            Connection: keep-alive
-            Content-Length: "77"
+            Content-Length: "78"
             Content-Type: application/json
             Host: localhost:8000
-            Postman-Token: 545ecca0-501f-4906-a80a-c9d83f520560
+            Postman-Token: d52bd446-a349-480b-9c8e-4309dc768678
             User-Agent: PostmanRuntime/7.32.1
         body: |-
             {
-                "name":"Animesh",
-                "email":"xyz@abc.com",
-                "phone":"0123456789"
-            }
-        body_type: ""
-      resp:
-        status_code: 400
-        header:
-            Connection: keep-alive
-            Content-Length: "153"
-            Content-Type: text/html; charset=utf-8
-            Date: Sat, 23 Sep 2023 03:06:19 GMT
-            Etag: W/"99-tWuumXcZV5OmsGHA7EJ4aM49gzs"
-            Keep-Alive: timeout=5
-            X-Powered-By: Express
-        body: 'Failed to register Student as MongoServerError: E11000 duplicate key error collection: Students.students index: email_1 dup key: { email: "xyz@abc.com" }'
-        body_type: ""
-        status_message: ""
-        proto_major: 0
-        proto_minor: 0
-      noise:
-        - header.Date
-      result:
-        status_code:
-            normal: true
-            expected: 400
-            actual: 400
-        headers_result:
-            - normal: false
-              expected:
-                key: Connection
-                value:
-                    - keep-alive
-              actual:
-                key: Connection
-                value: []
-            - normal: false
-              expected:
-                key: Content-Length
-                value:
-                    - "153"
-              actual:
-                key: Content-Length
-                value:
-                    - "88"
-            - normal: true
-              expected:
-                key: Content-Type
-                value:
-                    - text/html; charset=utf-8
-              actual:
-                key: Content-Type
-                value:
-                    - text/html; charset=utf-8
-            - normal: true
-              expected:
-                key: Date
-                value:
-                    - Sat, 23 Sep 2023 03:06:19 GMT
-              actual:
-                key: Date
-                value:
-                    - Sat, 23 Sep 2023 03:08:01 GMT
-            - normal: false
-              expected:
-                key: Etag
-                value:
-                    - W/"99-tWuumXcZV5OmsGHA7EJ4aM49gzs"
-              actual:
-                key: Etag
-                value:
-                    - W/"58-kVtoU2br0tiEYuyMmvwlhSkV0BA"
-            - normal: false
-              expected:
-                key: Keep-Alive
-                value:
-                    - timeout=5
-              actual:
-                key: Keep-Alive
-                value: []
-            - normal: true
-              expected:
-                key: X-Powered-By
-                value:
-                    - Express
-              actual:
-                key: X-Powered-By
-                value:
-                    - Express
-        body_result:
-            - normal: false
-              type: PLAIN
-              expected: 'Failed to register Student as MongoServerError: E11000 duplicate key error collection: Students.students index: email_1 dup key: { email: "xyz@abc.com" }'
-              actual: 'Failed to register Student as MongoNetworkError: connection 1 to 172.20.0.5:16789 closed'
-        dep_result: []
-    - kind: Http
-      name: report-1
-      status: FAILED
-      started: 1695438481
-      completed: 1695438481
-      test_case_path: /files/keploy
-      mock_path: ""
-      test_case_id: test-2
-      req:
-        method: POST
-        proto_major: 1
-        proto_minor: 1
-        url: http://172.20.0.3:8000/students
-        header:
-            Accept: '*/*'
-            Accept-Encoding: gzip, deflate, br
-            Cache-Control: no-cache
-            Connection: keep-alive
-            Content-Length: "77"
-            Content-Type: application/json
-            Host: localhost:8000
-            Postman-Token: 29155859-0ba6-4f4e-b8fb-4ad8f4180653
-            User-Agent: PostmanRuntime/7.32.1
-        body: |-
-            {
-                "name":"Animesh",
-                "email":"abc@xyz.com",
-                "phone":"0123456798"
+                "name":"Animesh P",
+                "email":"ab@xyz.com",
+                "phone":"0123456700"
             }
         body_type: ""
       resp:
@@ -161,7 +40,7 @@ tests:
             Connection: keep-alive
             Content-Length: "32"
             Content-Type: text/html; charset=utf-8
-            Date: Sat, 23 Sep 2023 03:06:45 GMT
+            Date: Sat, 23 Sep 2023 03:55:19 GMT
             Etag: W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
             Keep-Alive: timeout=5
             X-Powered-By: Express
@@ -174,9 +53,128 @@ tests:
         - header.Date
       result:
         status_code:
-            normal: false
+            normal: true
             expected: 201
-            actual: 400
+            actual: 201
+        headers_result:
+            - normal: true
+              expected:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+              actual:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            - normal: false
+              expected:
+                key: Keep-Alive
+                value:
+                    - timeout=5
+              actual:
+                key: Keep-Alive
+                value: []
+            - normal: true
+              expected:
+                key: X-Powered-By
+                value:
+                    - Express
+              actual:
+                key: X-Powered-By
+                value:
+                    - Express
+            - normal: false
+              expected:
+                key: Connection
+                value:
+                    - keep-alive
+              actual:
+                key: Connection
+                value: []
+            - normal: true
+              expected:
+                key: Content-Length
+                value:
+                    - "32"
+              actual:
+                key: Content-Length
+                value:
+                    - "32"
+            - normal: true
+              expected:
+                key: Content-Type
+                value:
+                    - text/html; charset=utf-8
+              actual:
+                key: Content-Type
+                value:
+                    - text/html; charset=utf-8
+            - normal: true
+              expected:
+                key: Date
+                value:
+                    - Sat, 23 Sep 2023 03:55:19 GMT
+              actual:
+                key: Date
+                value:
+                    - Sat, 23 Sep 2023 03:56:04 GMT
+        body_result:
+            - normal: true
+              type: PLAIN
+              expected: Student registration successful!
+              actual: Student registration successful!
+        dep_result: []
+    - kind: Http
+      name: report-1
+      status: FAILED
+      started: 1695441364
+      completed: 1695441364
+      test_case_path: /files/keploy
+      mock_path: ""
+      test_case_id: test-2
+      req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://172.20.0.3:8000/students
+        header:
+            Accept: '*/*'
+            Accept-Encoding: gzip, deflate, br
+            Cache-Control: no-cache
+            Content-Length: "75"
+            Content-Type: application/json
+            Host: localhost:8000
+            Postman-Token: e2fec64a-ef7e-49d5-aebf-d6166896491a
+            User-Agent: PostmanRuntime/7.32.1
+        body: |-
+            {
+                "name":"Animesh",
+                "email":"ab@xz.com",
+                "phone":"0123456799"
+            }
+        body_type: ""
+      resp:
+        status_code: 201
+        header:
+            Connection: keep-alive
+            Content-Length: "32"
+            Content-Type: text/html; charset=utf-8
+            Date: Sat, 23 Sep 2023 03:55:31 GMT
+            Etag: W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            Keep-Alive: timeout=5
+            X-Powered-By: Express
+        body: Student registration successful!
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+      noise:
+        - header.Date
+      result:
+        status_code:
+            normal: true
+            expected: 201
+            actual: 201
         headers_result:
             - normal: false
               expected:
@@ -186,7 +184,7 @@ tests:
               actual:
                 key: Connection
                 value: []
-            - normal: false
+            - normal: true
               expected:
                 key: Content-Length
                 value:
@@ -194,7 +192,7 @@ tests:
               actual:
                 key: Content-Length
                 value:
-                    - "88"
+                    - "32"
             - normal: true
               expected:
                 key: Content-Type
@@ -208,12 +206,12 @@ tests:
               expected:
                 key: Date
                 value:
-                    - Sat, 23 Sep 2023 03:06:45 GMT
+                    - Sat, 23 Sep 2023 03:55:31 GMT
               actual:
                 key: Date
                 value:
-                    - Sat, 23 Sep 2023 03:08:01 GMT
-            - normal: false
+                    - Sat, 23 Sep 2023 03:56:04 GMT
+            - normal: true
               expected:
                 key: Etag
                 value:
@@ -221,7 +219,7 @@ tests:
               actual:
                 key: Etag
                 value:
-                    - W/"58-7Klzcn3V/awKQOUG2Qbblt9z0uQ"
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
             - normal: false
               expected:
                 key: Keep-Alive
@@ -240,8 +238,8 @@ tests:
                 value:
                     - Express
         body_result:
-            - normal: false
+            - normal: true
               type: PLAIN
               expected: Student registration successful!
-              actual: 'Failed to register Student as MongoNetworkError: connection 2 to 172.20.0.5:16789 closed'
+              actual: Student registration successful!
         dep_result: []

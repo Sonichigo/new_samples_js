@@ -1,15 +1,15 @@
 version: api.keploy.io/v1beta1
-name: report-2
+name: report-3
 status: FAILED
 success: 0
 failure: 2
 total: 2
 tests:
     - kind: Http
-      name: report-2
+      name: report-3
       status: FAILED
-      started: 1695441555
-      completed: 1695441555
+      started: 1695441676
+      completed: 1695441677
       test_case_path: /files/keploy
       mock_path: ""
       test_case_id: test-1
@@ -42,6 +42,7 @@ tests:
             Content-Type: text/html; charset=utf-8
             Date: Sat, 23 Sep 2023 03:55:19 GMT
             Etag: W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            Keep-Alive: ""
             X-Powered-By: Express
         body: Student registration successful!
         body_type: ""
@@ -56,6 +57,41 @@ tests:
             expected: 201
             actual: 201
         headers_result:
+            - normal: true
+              expected:
+                key: Content-Type
+                value:
+                    - text/html; charset=utf-8
+              actual:
+                key: Content-Type
+                value:
+                    - text/html; charset=utf-8
+            - normal: true
+              expected:
+                key: Date
+                value:
+                    - Sat, 23 Sep 2023 03:55:19 GMT
+              actual:
+                key: Date
+                value:
+                    - Sat, 23 Sep 2023 04:01:17 GMT
+            - normal: true
+              expected:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+              actual:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            - normal: false
+              expected:
+                key: Keep-Alive
+                value:
+                    - ""
+              actual:
+                key: Keep-Alive
+                value: []
             - normal: true
               expected:
                 key: X-Powered-By
@@ -82,33 +118,6 @@ tests:
                 key: Content-Length
                 value:
                     - "32"
-            - normal: true
-              expected:
-                key: Content-Type
-                value:
-                    - text/html; charset=utf-8
-              actual:
-                key: Content-Type
-                value:
-                    - text/html; charset=utf-8
-            - normal: true
-              expected:
-                key: Date
-                value:
-                    - Sat, 23 Sep 2023 03:55:19 GMT
-              actual:
-                key: Date
-                value:
-                    - Sat, 23 Sep 2023 03:59:15 GMT
-            - normal: true
-              expected:
-                key: Etag
-                value:
-                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
-              actual:
-                key: Etag
-                value:
-                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
         body_result:
             - normal: true
               type: PLAIN
@@ -116,10 +125,10 @@ tests:
               actual: Student registration successful!
         dep_result: []
     - kind: Http
-      name: report-2
+      name: report-3
       status: FAILED
-      started: 1695441555
-      completed: 1695441555
+      started: 1695441677
+      completed: 1695441677
       test_case_path: /files/keploy
       mock_path: ""
       test_case_id: test-2
@@ -152,6 +161,7 @@ tests:
             Content-Type: text/html; charset=utf-8
             Date: Sat, 23 Sep 2023 03:55:31 GMT
             Etag: W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            Keep-Alive: ""
             X-Powered-By: Express
         body: Student registration successful!
         body_type: ""
@@ -166,6 +176,40 @@ tests:
             expected: 201
             actual: 201
         headers_result:
+            - normal: true
+              expected:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+              actual:
+                key: Etag
+                value:
+                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
+            - normal: false
+              expected:
+                key: Keep-Alive
+                value:
+                    - ""
+              actual:
+                key: Keep-Alive
+                value: []
+            - normal: true
+              expected:
+                key: X-Powered-By
+                value:
+                    - Express
+              actual:
+                key: X-Powered-By
+                value:
+                    - Express
+            - normal: false
+              expected:
+                key: Connection
+                value:
+                    - keep-alive
+              actual:
+                key: Connection
+                value: []
             - normal: true
               expected:
                 key: Content-Length
@@ -192,33 +236,7 @@ tests:
               actual:
                 key: Date
                 value:
-                    - Sat, 23 Sep 2023 03:59:15 GMT
-            - normal: true
-              expected:
-                key: Etag
-                value:
-                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
-              actual:
-                key: Etag
-                value:
-                    - W/"20-eRnsw5wzaHLQ7mrcxkJtVBiy7Xg"
-            - normal: true
-              expected:
-                key: X-Powered-By
-                value:
-                    - Express
-              actual:
-                key: X-Powered-By
-                value:
-                    - Express
-            - normal: false
-              expected:
-                key: Connection
-                value:
-                    - keep-alive
-              actual:
-                key: Connection
-                value: []
+                    - Sat, 23 Sep 2023 04:01:17 GMT
         body_result:
             - normal: true
               type: PLAIN
