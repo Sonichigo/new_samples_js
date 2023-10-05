@@ -1,0 +1,14 @@
+name: e2e Tests
+on:
+  push:
+    branches:
+      - main
+jobs:
+  e2e-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test-Report
+      uses: alphasians/test-reportql@main
+    - name: Checkout
+      uses: actions/checkout@v3
