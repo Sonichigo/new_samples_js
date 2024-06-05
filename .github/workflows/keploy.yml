@@ -3,17 +3,28 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    types: [opened, synchronise, reopened]
 jobs:
   e2e-test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout Commit
       uses: actions/checkout@v2
-    - name: Test-Report
-      uses: alphasians/test-reportql@main
+    - name: Set up Go
+      uses: actions/setup-node@v2
       with:
-        working-directory: /
-        delay: 10
-        command: node src/app.js
-        keploy-path: /keploy
+        node-version: 18
+    
+    - name: Keploy Tests
+      id: keploy-run-test
+      run: |
+        curl --silent --location "https://github.com/keploy/keploy/releases/latest/download/keploy_linux_amd64.tar.gz" | tar xz -C /tmp
+        sudo mkdir -p /usr/local/bin && sudo mv /tmp/keploy /usr/local/bin/keploy
+        
+        # Install application dependencies
+        npm install
+        
+        # Run the keploy captured tests
+        keploy test -c "node src/app.js"
