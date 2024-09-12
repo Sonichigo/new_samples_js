@@ -1,0 +1,327 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Student API",
+      "version": "1.0.0",
+      "description": "API for managing student data"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:8000"
+      }
+    ],
+    "paths": {
+      "/students": {
+        "get": {
+          "summary": "Get all students",
+          "responses": {
+            "200": {
+              "description": "List of students",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Student"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Failed to fetch student data",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Register a new student",
+          "requestBody": {
+            "description": "Student data",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Student registration successful"
+            },
+            "400": {
+              "description": "Failed to register student",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/student": {
+        "get": {
+          "summary": "Get student by name and email",
+          "parameters": [
+            {
+              "in": "query",
+              "name": "name",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "description": "Name of the student"
+            },
+            {
+              "in": "query",
+              "name": "email",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "description": "Email of the student"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Student data",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Student"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Failed to fetch student data",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/student/{name}": {
+        "get": {
+          "summary": "Get student by name",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "name",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "Name of the student"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Student data",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Student"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Failed to fetch student data",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/student/{id}": {
+        "patch": {
+          "summary": "Update student details by ID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID of the student"
+            }
+          ],
+          "requestBody": {
+            "description": "Student data to update",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Student"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Student detail updated"
+            },
+            "400": {
+              "description": "Failed to update student details",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete student by ID",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "description": "ID of the student"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Deleted student record successfully"
+            },
+            "500": {
+              "description": "Failed to delete student details",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/post": {
+        "post": {
+          "summary": "Make a POST request to an external API",
+          "requestBody": {
+            "description": "Data to send in POST request",
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Data from the external API",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Failed to post request data",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/get": {
+        "get": {
+          "summary": "Make a GET request to an external API",
+          "responses": {
+            "200": {
+              "description": "Data from the external API",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Failed to fetch request details",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Student": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "age": {
+              "type": "integer"
+            },
+            "grade": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
